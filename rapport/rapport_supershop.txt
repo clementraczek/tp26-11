@@ -1,0 +1,19 @@
+=== Rapport supershop ===
+
+1. Chiffre d’affaires total : 317.49 €
+
+2. Panier moyen : 45.36 €
+
+3. Article le plus commandé : Gel douche FreshEnergy (5 ventes)
+
+4. Top 3 clients par montant dépensé :
+   - Alice Martin : 105.97 €
+   - Katia Garnier : 59.88 €
+   - Chloé Bernard : 44.96 €
+
+5. Chiffre d’affaires par catégorie :
+   - Électronique : 129.89 €
+   - Beauté & Santé : 56.75 €
+   - Jeux & Jouets : 55.88 €
+   - Sport & Loisirs : 44.98 €
+   - Maison & Cuisine : 29.99 €

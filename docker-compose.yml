@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: supershop_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: tp26_11
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./creationbase.sql:/docker-entrypoint-initdb.d/01_creationbase.sql
+      - ./alimentation.sql:/docker-entrypoint-initdb.d/02_alimentation.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d tp26_11"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  python-report:
+    build: ./script_python
+    container_name: report_generator
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./rapport:/app/rapport
+    environment:
+      DSN: "dbname=tp26_11 user=admin password=admin host=postgres port=5432"
+
+  adminer:
+    image: adminer
+    container_name: adminer_supershop
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres

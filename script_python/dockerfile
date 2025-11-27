@@ -1,0 +1,11 @@
+FROM python:3.11
+
+WORKDIR /app
+
+COPY reporting.py .
+
+RUN mkdir -p /app/rapport
+
+RUN pip install psycopg[binary]
+
+CMD ["python", "reporting.py"]
