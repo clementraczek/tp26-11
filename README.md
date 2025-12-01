@@ -4,7 +4,6 @@ Il couvre la conception d’un schéma relationnel complet (catégories, produit
 
 Un jeu de données réaliste est fourni et inséré via SQL.
 
-Plus de 40 requêtes permettent d’analyser ventes, clients, catégories et chiffre d’affaires.
 
 Un script Python génère automatiquement un rapport synthétique (rapport\_supershop.txt) basé sur les résultats SQL.
 
@@ -68,15 +67,5 @@ container Python pour générer le rapport - lancer Adminer
 
 
 
-------------------------------------------------------------------------
 
-
-
-4\. Accéder à Adminer
-
-
-
-Ouvrir :
-
-http://localhost:8080
 
